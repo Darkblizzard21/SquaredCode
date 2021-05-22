@@ -12,7 +12,8 @@ const  fsLibrary  =  require('fs');  const LineLengthScale = 1; const CharacterA
 txt    =    txt.replace(/(\r\n|\n|\r)/gm,   " ");    txt    =    txt.replace(/   +(?= )/g,
 '');   txt   =   txt.trim();   let   squareEdgeLength  =  Math.floor(Math.sqrt(txt.length)
 *    lengthMultiplier    *    LineLengthScale);   let   lines   =   [];   let   lineLength
-= -1;  while   (txt.length   >   squareEdgeLength)   {  let  cutIndex  =  txt.indexOf(" ",    squareEdgeLength);     if    (cutIndex    >    lineLength)    lineLength    =    cutIndex;
+= -1;  while   (txt.length   >   squareEdgeLength)   {  let  cutIndex  =  txt.indexOf(" ",    
+squareEdgeLength);     if    (cutIndex    >    lineLength)    lineLength    =    cutIndex;
 lines.push(txt.substr(0,     cutIndex));     txt     =     txt.substr(cutIndex    +    1);
 }   lines.push(txt);   for   (let  i  =  0;  i  <  lines.length  -  1;  i++)  {  let  line
 =   lines[i];   let   curWhiteLength   =  1;  let  whiteCount  =  0;  let  j  =  0;  while
