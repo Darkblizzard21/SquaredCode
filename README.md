@@ -1,6 +1,6 @@
 # SquaredCode
 A script that formats code as a square, trying to keep it compiling afterwards. Since it only trying there as some issues with it:
-- Whitespace in strings dose not stay consistent
+- Whitespace in strings does not stay consistent
 - Any language feature that can not be written in any combination of lines may break after the squarification 
 - Most code will need some manual clean up to compile probably as square
 
@@ -28,4 +28,4 @@ You can also find the commented, standard formatted, code in the index.js in the
 
 ## Footnote(s)
 
-[1] with some adjustment to keep it working
+[1] With some adjustment to keep it working

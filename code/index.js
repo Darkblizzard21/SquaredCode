@@ -1,20 +1,20 @@
 /**⬛⬜⬛ CODE SQUARE LAYOUT GENERATOR ⬛⬜⬛
- * this script takes an "input.txt" code file and tries to format it as a rectangle
+ * This script takes an "input.txt" code file and tries to format it as a rectangle
  * where the sides are as close to another as possible. It may not succeed and the
- * formatted square code will not compile. Also the input code can not contain any
+ * formatted square code will not compile. Also, the input code can not contain any
  * comments. Because it will destroy the syntax in the square.
  * */
 
 const fsLibrary = require('fs');
 // Input: LineLengthScale
 const LineLengthScale = 1;
-// Input: Aspect ration of char height to char length in current font (height = 1)
+// Input: Aspect ratio of char height to char length in current font (height = 1)
 const CharacterAspectRatio = 0.52;
 const lengthMultiplier = 1 / CharacterAspectRatio;
 fsLibrary.readFile('input.txt', (error, txtString) => {
     if (error) throw error;
     /** Step 1: String Preprocessing
-     *  First the string gets trimmed and all whitespace is reduced to one character.
+     *  First the string gets trimmed, and all whitespace is reduced to one character.
      *  We also determine the scaled desired squareEdgeLength
      * */
     let txt = txtString.toString();
@@ -71,7 +71,7 @@ fsLibrary.readFile('input.txt', (error, txtString) => {
         lines[i] = line;
     }
     /** Step 4: Postprocess and save
-     * Now all lines get joined together with linebreaks and saved to the "output.txt"
+     * Now all lines get joined together with line breaks and saved to the "output.txt"
      * */
     let result = lines.join("\n");
     fsLibrary.writeFile('output.txt', result, function (err) {
